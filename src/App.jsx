@@ -18,6 +18,11 @@ const App = () => {
     // If you decide to make a function for going BACK (bonus), maybe make it do the opposite of this?
   }
 
+  const reset = () => {
+    setCurrentPage(0);
+    setFormValues({ name: '', age: '', email: ''});
+  }
+
   return (
     <div className="App">
       <Home
@@ -27,9 +32,10 @@ const App = () => {
         email={formValues.email}
         incrementPage={incrementPage}
         handleChange={handleChange}
+        reset={reset}
       />
     </div>
   )
 }
 
-export default App
+export default App 

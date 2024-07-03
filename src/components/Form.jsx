@@ -1,4 +1,13 @@
+import { useEffect, useState } from 'react';
+
 const Form = (props) => {
+  const [buttond, setButtond] = useState([true])
+
+  useEffect(()=>{
+    if(props.age !== '' && props.name !== '' && props.email !== ''){
+      setButtond(false);
+    }
+  },[props.age, props.name, props.email])
 
   return (
     <div>
@@ -29,9 +38,9 @@ const Form = (props) => {
         />
       </form>
       <div>
-        <button>Back</button>
+        <button onClick={props.reset}>Back</button>
         {/* If you want your button to go back, you better hook up a method to it's onClick property here! */}
-        <button onClick={props.incrementPage}>Next</button>
+        <button disabled={buttond} onClick={props.incrementPage}>Next</button>
         {/* This button has already been hooked up for you, just gotta pass the prop to this component! */}
       </div>
     </div>

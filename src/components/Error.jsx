@@ -1,4 +1,4 @@
-const Error = () => {
+const Error = ({reset}) => {
   // Don't forget to pass props above ^^ if you need them!
 
   return (
@@ -10,7 +10,7 @@ const Error = () => {
       <main>
         <h1>Sorry!</h1>
         <p>You must be 18 or older to sign up for our site!</p>
-        <button>Back</button>
+        <button onClick={reset}>Back</button>
         {/* Don't forget to hook up an onClick property for this ^^ button if you want it to work! */}
       </main>
     </div>
